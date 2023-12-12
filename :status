@@ -1,0 +1,34 @@
+
+   INFO  Preparing database.  
+
+  Creating migration table ............................................................ 10ms DONE
+
+   INFO  Running migrations.  
+
+  2019_12_14_000001_create_personal_access_tokens_table ............................... 30ms DONE
+  2023_12_11_182547_db_estudo_laravel ................................................. 38ms FAIL
+
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[HY000]: General error: 1005 Can't create table `db_estudo_laravel`.`turma` (errno: 150 "Foreign key constraint is incorrectly formed") (Connection: mysql, SQL: alter table `turma` add constraint `turma_id_professor_foreign` foreign key (`id_professor`) references `professor` (`id_professor`))
+
+  at vendor/laravel/framework/src/Illuminate/Database/Connection.php:822
+    818▕                     $this->getName(), $query, $this->prepareBindings($bindings), $e
+    819▕                 );
+    820▕             }
+    821▕ 
+  ➜ 822▕             throw new QueryException(
+    823▕                 $this->getName(), $query, $this->prepareBindings($bindings), $e
+    824▕             );
+    825▕         }
+    826▕     }
+
+      [2m+9 vendor frames [22m
+
+  10  database/migrations/2023_12_11_182547_db_estudo_laravel.php:29
+      Illuminate\Support\Facades\Facade::__callStatic()
+      [2m+24 vendor frames [22m
+
+  35  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
